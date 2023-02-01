@@ -4,6 +4,7 @@ const constants = {
   SIMPLE_STRING_FIELD: 'simpleString',
   MAX_LENGTH: 140,
   MIN_LENGTH: 3,
+  DEFAULT_TIME_DISPLAY_MESSAGE_S: 7,
 };
 
 export default constants;
