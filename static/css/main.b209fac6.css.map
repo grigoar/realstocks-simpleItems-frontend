@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/main.b209fac6.css","mappings":"AAAA,0BACE,YAEF,iBAEE,YACA,YAFA,gBAEA","sources":["App.module.scss"],"sourcesContent":[".mainContainer {\n  height: 90vh;\n}\n.main {\n  max-width: 1000px;\n  height: 100%;\n  margin: auto;\n}\n"],"names":[],"sourceRoot":""}
