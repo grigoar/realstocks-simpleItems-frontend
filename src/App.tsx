@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './App.module.scss';
+import AddItemPage from './pages/AddItemPage';
 
 const App = () => {
   return (
@@ -8,7 +9,7 @@ const App = () => {
         <h1>Add Items</h1>
       </header>
       <main className={classes.main}>
-        <h2>Add New Item test deploy</h2>
+        <AddItemPage />
       </main>
     </div>
   );
