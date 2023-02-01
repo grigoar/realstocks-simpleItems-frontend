@@ -4,10 +4,18 @@ import Card from '../commons/Card/Card';
 import validateFields from '../../utils/validate';
 import { fetchCreateItem } from '../../utils/helpers';
 import constants from '../../utils/constants';
+import useDisplayResultMessage from '../../hooks/useDisplayResultMessage';
+import MessageResult from '../commons/MessageResult/MessageResult';
 
 const AddItem = () => {
   const [simpleItemContent, setSimpleItemContent] = useState<string>('');
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const {
+    showResultErrorMessage,
+    showResultSuccessMessage,
+    isMessageError,
+    resultMessageDisplay,
+  } = useDisplayResultMessage(constants.DEFAULT_TIME_DISPLAY_MESSAGE_S);
 
   const addNewItemHandler = async (newItem: string) => {
     try {
@@ -17,8 +25,6 @@ const AddItem = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-
-          // 'Access-Control-Allow-Origin': '*'
         },
         body: JSON.stringify({ content: newItem }),
       };
@@ -27,8 +33,6 @@ const AddItem = () => {
         constants.CREATE_ITEM_API_URL,
         requestOptions
       );
-      console.log('response ---------------');
-      console.log(response);
 
       setIsSubmitting(false);
 
@@ -37,14 +41,13 @@ const AddItem = () => {
         response.statusCode?.toString().startsWith('5')
       ) {
         const errMessage = JSON.parse(response.body || '');
-        const errMessageJson = JSON.parse(errMessage);
-        console.log(errMessageJson);
+        showResultErrorMessage(errMessage.message.split('*').join(' || '));
         return;
       }
-      console.log('Item added');
+      showResultSuccessMessage('Item added!');
     } catch (err) {
       setIsSubmitting(false);
-      console.log('Something went wrong with the call');
+      showResultErrorMessage('Something went wrong! Please try again');
     }
   };
 
@@ -54,7 +57,7 @@ const AddItem = () => {
     const message = validateFields({ simpleString: simpleItemContent });
 
     if (message) {
-      console.log('Error Messages', message);
+      showResultErrorMessage(message.split('*').join(' || '));
       return;
     }
 
@@ -72,9 +75,7 @@ const AddItem = () => {
           className={classes.formContainer}
           autoComplete='off'
         >
-          <label className={classes.label} htmlFor={'itemString'}>
-            Item Name
-          </label>
+          <label htmlFor={'itemString'}>Item Name</label>
           <input
             type='text'
             name='feedbackContent'
@@ -90,6 +91,11 @@ const AddItem = () => {
             </button>
           </div>
         </form>
+        <MessageResult
+          isLoadingAction={isSubmitting}
+          isError={isMessageError}
+          message={resultMessageDisplay}
+        />
       </Card>
     </div>
   );

@@ -1,4 +1,3 @@
-import { URL } from 'url';
 import IReceivedFields from '../models/IReceivedFields';
 import constants from '../utils/constants';
 
