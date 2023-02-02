@@ -5,6 +5,7 @@ const constants = {
   MAX_LENGTH: 140,
   MIN_LENGTH: 3,
   DEFAULT_TIME_DISPLAY_MESSAGE_S: 7,
+  PROGRAMMING_LANGUAGE_CODE: ['if(', 'for(', 'while(', '}', '{', 'select *'],
 };
 
 export default constants;

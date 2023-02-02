@@ -39,11 +39,21 @@ function checkIfStringValid(field: string, fieldValue: string) {
   if (stringIsAValidUrl(fieldValue)) {
     messages.push(`The ${field} is dangerous! Marked as URL.`);
   }
-  if (/[[\]{}]/.test(fieldValue)) {
+  if (checkIfStringIsProgrammingLanguage(fieldValue)) {
     messages.push(`The ${field} is dangerous! Marked as programming language.`);
   }
-
   return compoundMessages(messages);
+}
+
+function checkIfStringIsProgrammingLanguage(inputString: string) {
+  const containsCode = constants.PROGRAMMING_LANGUAGE_CODE.some(
+    (element: string) => {
+      if (inputString.toLowerCase().includes(element.toLowerCase()))
+        return true;
+      return false;
+    }
+  );
+  return containsCode;
 }
 
 function stringIsAValidUrl(s: string) {

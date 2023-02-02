@@ -54,14 +54,14 @@ const AddItem = () => {
   const onSubmitHandler = async (e: React.SyntheticEvent) => {
     e.preventDefault();
 
-    const message = validateFields({ simpleString: simpleItemContent });
+    const message = validateFields({ simpleString: simpleItemContent.trim() });
 
     if (message) {
       showResultErrorMessage(message.split('*').join(' || '));
       return;
     }
 
-    addNewItemHandler(simpleItemContent);
+    addNewItemHandler(simpleItemContent.trim());
   };
 
   const changeItemStringHandler = (e: React.ChangeEvent<HTMLInputElement>) => {

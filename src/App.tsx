@@ -6,7 +6,7 @@ const App = () => {
   return (
     <div className={classes.mainContainer}>
       <header>
-        <h1>Add Items</h1>
+        <h1>Simple Items</h1>
       </header>
       <main className={classes.main}>
         <AddItemPage />

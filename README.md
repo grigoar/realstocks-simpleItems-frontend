@@ -4,5 +4,7 @@
 
 ## The backend repository is at [Backend Repo](https://github.com/grigoar/realstocks-simpleItems-backend)
 
+### Setting up the project
+
 1. Clone the repository
 2. The CI/CD is triggered when the code is pushed on main branch
