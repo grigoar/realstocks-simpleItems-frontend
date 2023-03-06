@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/realstocks-simpleItems-frontend/static/css/main.c112939b.css",
-    "main.js": "/realstocks-simpleItems-frontend/static/js/main.8fe71b3c.js",
-    "index.html": "/realstocks-simpleItems-frontend/index.html",
-    "main.c112939b.css.map": "/realstocks-simpleItems-frontend/static/css/main.c112939b.css.map",
-    "main.8fe71b3c.js.map": "/realstocks-simpleItems-frontend/static/js/main.8fe71b3c.js.map"
+    "main.css": "/simpleItems-frontend/static/css/main.c112939b.css",
+    "main.js": "/simpleItems-frontend/static/js/main.093d211e.js",
+    "index.html": "/simpleItems-frontend/index.html",
+    "main.c112939b.css.map": "/simpleItems-frontend/static/css/main.c112939b.css.map",
+    "main.093d211e.js.map": "/simpleItems-frontend/static/js/main.093d211e.js.map"
   },
   "entrypoints": [
     "static/css/main.c112939b.css",
-    "static/js/main.8fe71b3c.js"
+    "static/js/main.093d211e.js"
   ]
 }
