@@ -2,7 +2,7 @@
   "name": "realstocks-simpleitems-frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://grigoar.github.io/realstocks-simpleItems-frontend/",
+  "homepage": "https://grigoar.github.io/simpleItems-frontend/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
